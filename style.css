@@ -1,0 +1,40 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#08131d;
+    color:#fff;
+}
+
+.container{
+    max-width:420px;
+    margin:auto;
+    padding:20px;
+}
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+    color:#00ff88;
+}
+
+.profile{
+    width:45px;
+    height:45px;
+    border-radius:50%;
+    background:#1f2937;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
