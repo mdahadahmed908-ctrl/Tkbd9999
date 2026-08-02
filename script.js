@@ -62,3 +62,6 @@ document.querySelectorAll(".game-card button").forEach(btn => {
 });
 
 console.log("Tkbd9999 Loaded Successfully");
+function startGame() {
+  alert("🎮 Welcome to Tkbd9999!\nChoose a game and start playing.");
+}
