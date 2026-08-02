@@ -329,3 +329,40 @@ color:#ccc;
 transform:rotate(360deg);
 }
 }
+/* ===== Dark / Light Mode ===== */
+
+.light-mode{
+background:#f5f5f5;
+color:#111;
+}
+
+.light-mode .app{
+background:#f5f5f5;
+}
+
+.light-mode .game-card,
+.light-mode .cat,
+.light-mode .search-box input,
+.light-mode .menu,
+.light-mode .notify,
+.light-mode .profile,
+.light-mode .bottom-nav{
+background:#ffffff;
+color:#111;
+}
+
+.theme-btn{
+position:fixed;
+right:20px;
+bottom:90px;
+width:55px;
+height:55px;
+border-radius:50%;
+border:none;
+background:#00c853;
+color:#fff;
+font-size:24px;
+cursor:pointer;
+box-shadow:0 10px 20px rgba(0,0,0,.3);
+z-index:999;
+}
