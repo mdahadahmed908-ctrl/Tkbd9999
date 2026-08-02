@@ -32,3 +32,14 @@ document.querySelectorAll(".nav").forEach(item => {
     item.classList.add("active");
   });
 });
+// Loading Screen
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.getElementById("loader").style.opacity = "0";
+
+    setTimeout(() => {
+      document.getElementById("loader").style.display = "none";
+    }, 500);
+
+  }, 1500);
+});
