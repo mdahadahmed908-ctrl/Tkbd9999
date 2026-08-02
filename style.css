@@ -11,6 +11,7 @@ body{
 background:#07141f;
 color:#fff;
 transition:.3s;
+overflow-x:hidden;
 }
 
 .app{
@@ -19,6 +20,8 @@ margin:auto;
 min-height:100vh;
 padding:18px;
 padding-bottom:90px;
+position:relative;
+z-index:2;
 }
 
 /* ===== HEADER ===== */
@@ -30,13 +33,16 @@ align-items:center;
 margin-bottom:20px;
 }
 
-.left,.right{
+.left,
+.right{
 display:flex;
 align-items:center;
 gap:12px;
 }
 
-.menu,.notify,.profile{
+.menu,
+.notify,
+.profile{
 width:45px;
 height:45px;
 border-radius:50%;
@@ -44,8 +50,10 @@ background:#132637;
 display:flex;
 justify-content:center;
 align-items:center;
+font-size:20px;
+cursor:pointer;
 position:relative;
-box-shadow:0 8px 20px rgba(0,0,0,.3);
+box-shadow:0 10px 20px rgba(0,0,0,.35);
 }
 
 .logo{
@@ -54,20 +62,19 @@ font-weight:700;
 color:#00ff99;
 }
 
-/* Badge */
-
 .badge{
 position:absolute;
-top:-4px;
-right:-4px;
-background:red;
+top:-5px;
+right:-5px;
+background:#ff3b30;
 width:18px;
 height:18px;
 border-radius:50%;
-font-size:10px;
 display:flex;
 justify-content:center;
 align-items:center;
+font-size:10px;
+font-weight:bold;
 }
 
 /* ===== HERO ===== */
@@ -77,7 +84,7 @@ background:linear-gradient(135deg,#00c853,#00bfa5);
 padding:25px;
 border-radius:22px;
 margin-bottom:20px;
-box-shadow:0 15px 25px rgba(0,0,0,.35);
+box-shadow:0 15px 30px rgba(0,0,0,.35);
 }
 
 .hero h1{
@@ -86,20 +93,56 @@ margin-bottom:10px;
 }
 
 .hero p{
+font-size:14px;
 opacity:.9;
-margin-bottom:20px;
+margin-bottom:18px;
+line-height:1.6;
 }
 
 .hero-btn{
 border:none;
-padding:12px 25px;
-border-radius:30px;
 background:#fff;
 color:#00a86b;
+padding:12px 25px;
+border-radius:30px;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+}
+
+.hero-btn:hover{
+transform:scale(1.05);
+}
+
+/* ===== BONUS ===== */
+
+.bonus-card{
+margin:20px 0;
+padding:20px;
+border-radius:20px;
+background:linear-gradient(135deg,#ff9800,#ff5722);
+text-align:center;
+box-shadow:0 10px 20px rgba(0,0,0,.35);
+}
+
+.bonus-card h2{
+margin-bottom:10px;
+}
+
+.bonus-card p{
+font-size:14px;
+margin-bottom:15px;
+}
+
+.bonus-card button{
+border:none;
+background:#fff;
+color:#ff5722;
+padding:12px 22px;
+border-radius:30px;
 font-weight:700;
 cursor:pointer;
 }
-
 /* ===== SEARCH ===== */
 
 .search-box{
@@ -115,8 +158,10 @@ border-radius:15px;
 background:#132637;
 color:#fff;
 font-size:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.25);
 }
-/* ===== SECTION TITLE ===== */
+
+/* ===== SECTION ===== */
 
 .section-title{
 display:flex;
@@ -145,10 +190,9 @@ display:none;
 .cat{
 min-width:100px;
 padding:12px;
-text-align:center;
-border-radius:15px;
 background:#132637;
-font-size:14px;
+border-radius:15px;
+text-align:center;
 font-weight:600;
 cursor:pointer;
 transition:.3s;
@@ -156,6 +200,7 @@ transition:.3s;
 
 .cat:hover{
 background:#00c853;
+transform:translateY(-3px);
 }
 
 /* ===== GAMES ===== */
@@ -172,12 +217,21 @@ background:#132637;
 border-radius:20px;
 padding:18px;
 text-align:center;
-box-shadow:0 10px 20px rgba(0,0,0,.35);
+position:relative;
 transition:.3s;
+box-shadow:0 10px 20px rgba(0,0,0,.35);
 }
 
 .game-card:hover{
 transform:translateY(-6px);
+}
+
+.favorite{
+position:absolute;
+top:12px;
+right:12px;
+font-size:22px;
+cursor:pointer;
 }
 
 .game-img{
@@ -196,12 +250,37 @@ margin-bottom:15px;
 }
 
 .game-card button{
+border:none;
 background:#00c853;
 color:#fff;
-border:none;
 padding:10px 18px;
 border-radius:30px;
 cursor:pointer;
+font-weight:600;
+}
+/* ===== LEADERBOARD ===== */
+
+.leaderboard{
+background:#132637;
+padding:20px;
+margin:20px 0;
+border-radius:20px;
+box-shadow:0 10px 20px rgba(0,0,0,.35);
+}
+
+.leaderboard h2{
+margin-bottom:15px;
+}
+
+.player{
+display:flex;
+justify-content:space-between;
+padding:12px 0;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.player:last-child{
+border-bottom:none;
 }
 
 /* ===== BOTTOM NAV ===== */
@@ -217,6 +296,8 @@ background:#0d1d2b;
 display:flex;
 justify-content:space-around;
 padding:12px 0;
+border-top:1px solid rgba(255,255,255,.08);
+z-index:100;
 }
 
 .nav{
@@ -224,6 +305,13 @@ display:flex;
 flex-direction:column;
 align-items:center;
 color:#8f9ba8;
+font-size:22px;
+cursor:pointer;
+}
+
+.nav span{
+font-size:12px;
+margin-top:4px;
 }
 
 .nav.active{
@@ -276,115 +364,34 @@ background:#00c853;
 color:#fff;
 font-size:22px;
 cursor:pointer;
+box-shadow:0 10px 20px rgba(0,0,0,.35);
 z-index:999;
 }
-/* ===== DAILY BONUS ===== */
 
-.bonus-card{
-background:linear-gradient(135deg,#ff9800,#ff5722);
-padding:20px;
-border-radius:20px;
-margin:20px 0;
-text-align:center;
-box-shadow:0 10px 20px rgba(0,0,0,.3);
-}
+/* ===== RESPONSIVE ===== */
 
-.bonus-card h2{
-margin-bottom:10px;
-}
-
-.bonus-card p{
-margin-bottom:15px;
-font-size:14px;
-}
-
-.bonus-card button{
-background:#fff;
-color:#ff5722;
-border:none;
-padding:12px 20px;
-border-radius:30px;
-font-weight:600;
-cursor:pointer;
-}
-/* ===== LEADERBOARD ===== */
-
-.leaderboard{
-background:#132637;
-padding:20px;
-margin:20px 0;
-border-radius:20px;
-}
-
-.leaderboard h2{
-margin-bottom:15px;
-}
-
-.player{
-display:flex;
-justify-content:space-between;
-padding:12px 0;
-border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.player:last-child{
-border-bottom:none;
-}
-/* ===== FLOATING COINS ===== */
-
-.coins{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-pointer-events:none;
-overflow:hidden;
-z-index:0;
-}
-
-.coins span{
-position:absolute;
-font-size:28px;
-animation:floatCoin 10s linear infinite;
-opacity:.4;
-}
-
-.coins span:nth-child(1){
-left:10%;
-animation-delay:0s;
-}
-
-.coins span:nth-child(2){
-left:30%;
-animation-delay:2s;
-}
-
-.coins span:nth-child(3){
-left:50%;
-animation-delay:4s;
-}
-
-.coins span:nth-child(4){
-left:70%;
-animation-delay:6s;
-}
-
-.coins span:nth-child(5){
-left:90%;
-animation-delay:8s;
-}
-
-@keyframes floatCoin{
-0%{
-transform:translateY(100vh) rotate(0deg);
-}
-100%{
-transform:translateY(-120px) rotate(360deg);
-}
-}
+@media(max-width:480px){
 
 .app{
-position:relative;
-z-index:1;
+padding:15px;
+padding-bottom:90px;
+}
+
+.logo{
+font-size:20px;
+}
+
+.hero h1{
+font-size:24px;
+}
+
+.games{
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+}
+
+.game-card{
+padding:15px;
+}
+
 }
