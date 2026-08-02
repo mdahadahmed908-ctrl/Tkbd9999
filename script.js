@@ -1,57 +1,64 @@
-console.log("Tkbd9999 Loaded Successfully");
-
-// Search
-const search = document.querySelector(".search-box input");
-
-search.addEventListener("keyup", function () {
-  const value = this.value.toLowerCase();
-  const games = document.querySelectorAll(".game-card");
-
-  games.forEach(game => {
-    const name = game.querySelector("h3").innerText.toLowerCase();
-
-    if (name.includes(value)) {
-      game.style.display = "block";
-    } else {
-      game.style.display = "none";
-    }
-  });
-});
-
-// Play Button
-document.querySelectorAll(".game-card button").forEach(btn => {
-  btn.addEventListener("click", () => {
-    alert("Game feature coming soon!");
-  });
-});
-
-// Bottom Navigation
-document.querySelectorAll(".nav").forEach(item => {
-  item.addEventListener("click", () => {
-    document.querySelectorAll(".nav").forEach(n => n.classList.remove("active"));
-    item.classList.add("active");
-  });
-});
-// Loading Screen
-window.addEventListener("load", () => {
+// ===== LOADER =====
+window.addEventListener("load", function () {
+  const loader = document.getElementById("loader");
   setTimeout(() => {
-    document.getElementById("loader").style.opacity = "0";
-
-    setTimeout(() => {
-      document.getElementById("loader").style.display = "none";
-    }, 500);
-
-  }, 1500);
+    loader.style.display = "none";
+  }, 1200);
 });
-// Dark Mode
+
+// ===== SEARCH =====
+const searchInput = document.getElementById("searchInput");
+
+if (searchInput) {
+  searchInput.addEventListener("keyup", function () {
+    const value = this.value.toLowerCase();
+    const cards = document.querySelectorAll(".game-card");
+
+    cards.forEach(card => {
+      const name = card.dataset.name.toLowerCase();
+
+      if (name.includes(value)) {
+        card.style.display = "block";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  });
+}
+
+// ===== THEME =====
 const themeBtn = document.getElementById("themeBtn");
 
-themeBtn.addEventListener("click", () => {
-  document.body.classList.toggle("light-mode");
+if (themeBtn) {
+  themeBtn.addEventListener("click", () => {
 
-  if(document.body.classList.contains("light-mode")){
-    themeBtn.innerHTML="☀️";
-  }else{
-    themeBtn.innerHTML="🌙";
-  }
+    document.body.classList.toggle("light");
+
+    if (document.body.classList.contains("light")) {
+      document.body.style.background = "#f5f5f5";
+      document.body.style.color = "#111";
+      themeBtn.innerHTML = "☀️";
+    } else {
+      document.body.style.background = "#07141f";
+      document.body.style.color = "#fff";
+      themeBtn.innerHTML = "🌙";
+    }
+
+  });
+}
+
+// ===== PLAY BUTTON =====
+document.querySelectorAll(".game-card button").forEach(btn => {
+
+  btn.addEventListener("click", function () {
+
+    const game =
+      this.parentElement.querySelector("h3").innerText;
+
+    alert("🎮 Opening " + game);
+
+  });
+
 });
+
+console.log("Tkbd9999 Loaded Successfully");
