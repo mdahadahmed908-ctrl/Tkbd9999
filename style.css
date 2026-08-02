@@ -330,3 +330,61 @@ border-bottom:1px solid rgba(255,255,255,.08);
 .player:last-child{
 border-bottom:none;
 }
+/* ===== FLOATING COINS ===== */
+
+.coins{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+z-index:0;
+}
+
+.coins span{
+position:absolute;
+font-size:28px;
+animation:floatCoin 10s linear infinite;
+opacity:.4;
+}
+
+.coins span:nth-child(1){
+left:10%;
+animation-delay:0s;
+}
+
+.coins span:nth-child(2){
+left:30%;
+animation-delay:2s;
+}
+
+.coins span:nth-child(3){
+left:50%;
+animation-delay:4s;
+}
+
+.coins span:nth-child(4){
+left:70%;
+animation-delay:6s;
+}
+
+.coins span:nth-child(5){
+left:90%;
+animation-delay:8s;
+}
+
+@keyframes floatCoin{
+0%{
+transform:translateY(100vh) rotate(0deg);
+}
+100%{
+transform:translateY(-120px) rotate(360deg);
+}
+}
+
+.app{
+position:relative;
+z-index:1;
+}
