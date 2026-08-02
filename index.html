@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tkbd9999</title>
+
+<title>Tkbd9999 - Gaming Hub</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -15,24 +17,24 @@
 </head>
 
 <body>
+
 <div id="loader">
-  <div class="spinner"></div>
-  <h2>Tkbd9999</h2>
-  <p>Loading...</p>
+<div class="spinner"></div>
+<h2>Tkbd9999</h2>
+<p>Loading...</p>
 </div>
+
+<button class="theme-btn" id="themeBtn">🌙</button>
+
 <div class="app">
 
 <header class="header">
 
 <div class="left">
 
-<div class="menu">
-☰
-</div>
+<div class="menu">☰</div>
 
-<div class="logo">
-🎮 Tkbd9999
-</div>
+<div class="logo">🎮 Tkbd9999</div>
 
 </div>
 
@@ -40,57 +42,33 @@
 
 <div class="notify">
 🔔
+<span class="badge">3</span>
 </div>
 
-<div class="profile">
-👤
-</div>
+<div class="profile">👤</div>
 
 </div>
 
 </header>
 
-<section class="wallet">
+<section class="hero">
 
-<div>
-
-<p>Total Balance</p>
-
-<h1>৳ 25,450</h1>
-
-<span>Updated Just Now</span>
-
-</div>
-
-<button>
-Deposit
-</button>
-
-</section>
-
-<section class="banner">
-
-<div class="banner-text">
-
-<h2>
-Play & Win Everyday
-</h2>
+<h1>Welcome Gamer 👋</h1>
 
 <p>
-Best Mobile Gaming Platform
+Discover amazing games and enjoy your gaming collection.
 </p>
 
-<button>
-Play Now
+<button class="hero-btn">
+Explore Games
 </button>
-
-</div>
 
 </section>
 
 <section class="search-box">
 
 <input
+id="searchInput"
 type="text"
 placeholder="Search Games...">
 
@@ -104,13 +82,17 @@ placeholder="Search Games...">
 
 <div class="categories">
 
-<div class="cat">🔥 Hot</div>
+<div class="cat">🔥 Trending</div>
 
-<div class="cat">🎰 Slots</div>
+<div class="cat">🏎 Racing</div>
+
+<div class="cat">🧩 Puzzle</div>
 
 <div class="cat">⚽ Sports</div>
 
-<div class="cat">🎲 Casino</div>
+<div class="cat">🎯 Action</div>
+
+<div class="cat">👑 Strategy</div>
 
 </div>
 
@@ -120,89 +102,47 @@ placeholder="Search Games...">
 
 </section>
 
-<div class="games">
-  <div class="game-card">
-
-<div class="game-img">
-🚀
-</div>
-
+<div class="games" id="games">
+  <div class="game-card" data-name="Space Run">
+<div class="game-img">🚀</div>
 <h3>Space Run</h3>
-
 <p>Adventure Game</p>
-
 <button>Play</button>
-
 </div>
 
-<div class="game-card">
-
-<div class="game-img">
-🏎️
-</div>
-
+<div class="game-card" data-name="Speed Race">
+<div class="game-img">🏎️</div>
 <h3>Speed Race</h3>
-
 <p>Racing Game</p>
-
 <button>Play</button>
-
 </div>
 
-<div class="game-card">
-
-<div class="game-img">
-🧩
-</div>
-
+<div class="game-card" data-name="Puzzle Pro">
+<div class="game-img">🧩</div>
 <h3>Puzzle Pro</h3>
-
 <p>Puzzle Game</p>
-
 <button>Play</button>
-
 </div>
 
-<div class="game-card">
-
-<div class="game-img">
-⚽
-</div>
-
+<div class="game-card" data-name="Football">
+<div class="game-img">⚽</div>
 <h3>Football</h3>
-
 <p>Sports Game</p>
-
 <button>Play</button>
-
 </div>
 
-<div class="game-card">
-
-<div class="game-img">
-🎯
-</div>
-
+<div class="game-card" data-name="Target Hero">
+<div class="game-img">🎯</div>
 <h3>Target Hero</h3>
-
 <p>Action Game</p>
-
 <button>Play</button>
-
 </div>
 
-<div class="game-card">
-
-<div class="game-img">
-👑
-</div>
-
-<h3>Royal King</h3>
-
-<p>Casino Game</p>
-
+<div class="game-card" data-name="King Quest">
+<div class="game-img">👑</div>
+<h3>King Quest</h3>
+<p>Strategy Game</p>
 <button>Play</button>
-
 </div>
 
 </div>
@@ -220,8 +160,8 @@ placeholder="Search Games...">
 </div>
 
 <div class="nav">
-🎁
-<span>Bonus</span>
+🏆
+<span>Leaderboard</span>
 </div>
 
 <div class="nav">
@@ -234,6 +174,6 @@ placeholder="Search Games...">
 </div>
 
 <script src="script.js"></script>
-<button class="theme-btn" id="themeBtn">🌙</button>
+
 </body>
 </html>
