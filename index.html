@@ -1,209 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Tkbd9999 - Game Hub</title>
+<title>TKBD9999 Game Hub</title>
 
 <link rel="stylesheet" href="style.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 </head>
 
 <body>
 
+<!-- Loader -->
+
 <div id="loader">
+
 <div class="spinner"></div>
-<h2>Tkbd9999</h2>
+
+<h2>TKBD9999</h2>
+
 <p>Loading...</p>
+
 </div>
 
-<button class="theme-btn" id="themeBtn">🌙</button>
+<!-- Theme Button -->
+
+<button id="themeBtn" class="theme-btn">
+
+<i class="fa-solid fa-moon"></i>
+
+</button>
 
 <div class="app">
+
+<!-- Header -->
 
 <header class="header">
 
 <div class="left">
 
-<div class="menu">☰</div>
+<div class="menu">
 
-<div class="logo">🎮 Tkbd9999</div>
+<i class="fa-solid fa-bars"></i>
+
+</div>
+
+<div class="logo">
+
+<i class="fa-solid fa-gamepad"></i>
+
+<div>
+
+<h2>TKBD9999</h2>
+
+<small>GAME HUB</small>
+
+</div>
+
+</div>
 
 </div>
 
 <div class="right">
 
 <div class="notify">
-🔔
+
+<i class="fa-solid fa-bell"></i>
+
 <span class="badge">3</span>
+
 </div>
 
-<div class="profile">👤</div>
+<div class="profile">
+
+<img src="images/avatar.jpg" alt="Profile">
+
+</div>
 
 </div>
 
 </header>
 
+<!-- Hero Banner -->
+
 <section class="hero">
 
-<h1>Welcome Gamer 👋</h1>
+<div class="hero-content">
+
+<div>
+
+<span class="welcome">
+
+WELCOME TO
+
+</span>
+
+<h1>
+
+TKBD9999<br>
+
+GAME HUB
+
+</h1>
 
 <p>
-Discover exciting games, explore new adventures and build your collection.
+
+Play the best games, compete with players and enjoy exciting rewards.
+
 </p>
 
-<button class="hero-btn" onclick="startGame()">
-🚀 Explore Games
+<button onclick="startGame()">
+
+PLAY NOW
+
+<i class="fa-solid fa-circle-play"></i>
+
 </button>
+
+</div>
+
+<div class="hero-image">
+
+<img src="images/banner.png" alt="Banner">
+
+</div>
+
+</div>
 
 </section>
 
-<section class="bonus-card">
+<!-- Bonus -->
 
-<h2>🎁 Daily Reward</h2>
+<section class="bonus">
 
-<p>Come back every day to collect your free reward.</p>
+<div class="gift">
 
-<button onclick="claimBonus()">
-Claim Reward
+🎁
+
+</div>
+
+<div>
+
+<h4>DAILY BONUS</h4>
+
+<h2>CLAIM YOUR REWARD!</h2>
+
+<p>
+
+Login every day and collect exciting rewards.
+
+</p>
+
+</div>
+
+<button>
+
+CLAIM
+
 </button>
 
 </section>
+<!-- Search -->
 
 <section class="search-box">
+
+<div class="search">
+
+<i class="fa-solid fa-magnifying-glass"></i>
 
 <input
 id="searchInput"
 type="text"
-placeholder="🔍 Search Games...">
+placeholder="Search games...">
+
+</div>
 
 </section>
+
+<!-- Categories -->
 
 <section class="section-title">
 
 <h2>Categories</h2>
 
+<a href="#">See All</a>
+
 </section>
 
 <div class="categories">
 
-<div class="cat">🔥 Trending</div>
-<div class="cat">🏎 Racing</div>
-<div class="cat">🧩 Puzzle</div>
-<div class="cat">⚽ Sports</div>
-<div class="cat">🎯 Action</div>
-<div class="cat">👑 Strategy</div>
+<div class="cat active">
+<i class="fa-solid fa-gamepad"></i>
+<span>All</span>
+</div>
+
+<div class="cat">
+🚀
+<span>Action</span>
+</div>
+
+<div class="cat">
+🏎️
+<span>Racing</span>
+</div>
+
+<div class="cat">
+🧩
+<span>Puzzle</span>
+</div>
+
+<div class="cat">
+⚽
+<span>Sports</span>
+</div>
+
+<div class="cat">
+🗡️
+<span>Adventure</span>
+</div>
 
 </div>
+
+<!-- Popular Games -->
 
 <section class="section-title">
 
 <h2>Popular Games</h2>
 
+<a href="#">See All</a>
+
 </section>
 
 <div class="games" id="games">
-  <div class="game-card" data-name="Space Run">
-<div class="favorite">🤍</div>
-<div class="game-img">🚀</div>
+
+<div class="game-card" data-name="Space Run">
+
+<img src="images/game1.jpg" alt="">
+
 <h3>Space Run</h3>
-<p>Adventure Game</p>
-<button>Play</button>
+
+<div class="game-bottom">
+
+<button>PLAY</button>
+
+<i class="fa-regular fa-heart"></i>
+
+</div>
+
 </div>
 
 <div class="game-card" data-name="Speed Race">
-<div class="favorite">🤍</div>
-<div class="game-img">🏎️</div>
+
+<img src="images/game2.jpg" alt="">
+
 <h3>Speed Race</h3>
-<p>Racing Game</p>
-<button>Play</button>
+
+<div class="game-bottom">
+
+<button>PLAY</button>
+
+<i class="fa-regular fa-heart"></i>
+
+</div>
+
 </div>
 
 <div class="game-card" data-name="Puzzle Pro">
-<div class="favorite">🤍</div>
-<div class="game-img">🧩</div>
+
+<img src="images/game3.jpg" alt="">
+
 <h3>Puzzle Pro</h3>
-<p>Puzzle Game</p>
-<button>Play</button>
+
+<div class="game-bottom">
+
+<button>PLAY</button>
+
+<i class="fa-regular fa-heart"></i>
+
+</div>
+
 </div>
 
 <div class="game-card" data-name="Football Stars">
-<div class="favorite">🤍</div>
-<div class="game-img">⚽</div>
+
+<img src="images/game4.jpg" alt="">
+
 <h3>Football Stars</h3>
-<p>Sports Game</p>
-<button>Play</button>
+
+<div class="game-bottom">
+
+<button>PLAY</button>
+
+<i class="fa-regular fa-heart"></i>
+
+</div>
+
 </div>
 
 <div class="game-card" data-name="Target Hero">
-<div class="favorite">🤍</div>
-<div class="game-img">🎯</div>
+
+<img src="images/game5.jpg" alt="">
+
 <h3>Target Hero</h3>
-<p>Action Game</p>
-<button>Play</button>
+
+<div class="game-bottom">
+
+<button>PLAY</button>
+
+<i class="fa-regular fa-heart"></i>
+
+</div>
+
 </div>
 
 <div class="game-card" data-name="King Quest">
-<div class="favorite">🤍</div>
-<div class="game-img">👑</div>
+
+<img src="images/game6.jpg" alt="">
+
 <h3>King Quest</h3>
-<p>Strategy Game</p>
-<button>Play</button>
-</div>
+
+<div class="game-bottom">
+
+<button>PLAY</button>
+
+<i class="fa-regular fa-heart"></i>
 
 </div>
 
-<section class="leaderboard">
-
-<h2>🏆 Top Players</h2>
-
-<div class="player">
-<span>🥇 Alex</span>
-<b>12,500 pts</b>
 </div>
 
-<div class="player">
-<span>🥈 John</span>
-<b>10,300 pts</b>
 </div>
-
-<div class="player">
-<span>🥉 GamerX</span>
-<b>9,850 pts</b>
-</div>
-
-</section>
+<!-- Bottom Navigation -->
 
 <nav class="bottom-nav">
 
 <div class="nav active">
-🏠
+<i class="fa-solid fa-house"></i>
 <span>Home</span>
 </div>
 
 <div class="nav">
-🎮
+<i class="fa-solid fa-gamepad"></i>
 <span>Games</span>
 </div>
 
 <div class="nav">
-🏆
+<i class="fa-solid fa-trophy"></i>
 <span>Leaderboard</span>
 </div>
 
 <div class="nav">
-👤
+<i class="fa-regular fa-heart"></i>
+<span>Favorites</span>
+</div>
+
+<div class="nav">
+<i class="fa-solid fa-user"></i>
 <span>Profile</span>
 </div>
 
 </nav>
+
+<!-- Footer -->
+
+<footer class="footer">
+
+<h3>🎮 TKBD9999 GAME HUB</h3>
+
+<p>
+Play • Compete • Win
+</p>
+
+<p class="copyright">
+© 2026 TKBD9999. All Rights Reserved.
+</p>
+
+</footer>
 
 </div>
 
