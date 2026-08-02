@@ -307,3 +307,26 @@ border-radius:30px;
 font-weight:600;
 cursor:pointer;
 }
+/* ===== LEADERBOARD ===== */
+
+.leaderboard{
+background:#132637;
+padding:20px;
+margin:20px 0;
+border-radius:20px;
+}
+
+.leaderboard h2{
+margin-bottom:15px;
+}
+
+.player{
+display:flex;
+justify-content:space-between;
+padding:12px 0;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.player:last-child{
+border-bottom:none;
+}
