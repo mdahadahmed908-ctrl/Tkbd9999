@@ -278,3 +278,32 @@ font-size:22px;
 cursor:pointer;
 z-index:999;
 }
+/* ===== DAILY BONUS ===== */
+
+.bonus-card{
+background:linear-gradient(135deg,#ff9800,#ff5722);
+padding:20px;
+border-radius:20px;
+margin:20px 0;
+text-align:center;
+box-shadow:0 10px 20px rgba(0,0,0,.3);
+}
+
+.bonus-card h2{
+margin-bottom:10px;
+}
+
+.bonus-card p{
+margin-bottom:15px;
+font-size:14px;
+}
+
+.bonus-card button{
+background:#fff;
+color:#ff5722;
+border:none;
+padding:12px 20px;
+border-radius:30px;
+font-weight:600;
+cursor:pointer;
+}
