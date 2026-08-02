@@ -1,6 +1,7 @@
 // ===== LOADER =====
-window.addEventListener("load", function () {
+window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
+
   setTimeout(() => {
     loader.style.display = "none";
   }, 1200);
@@ -11,41 +12,38 @@ const searchInput = document.getElementById("searchInput");
 
 if (searchInput) {
   searchInput.addEventListener("keyup", function () {
+
     const value = this.value.toLowerCase();
-    const cards = document.querySelectorAll(".game-card");
 
-    cards.forEach(card => {
-      const name = card.dataset.name.toLowerCase();
+    document.querySelectorAll(".game-card").forEach(card => {
 
-      if (name.includes(value)) {
+      const game = card.dataset.name.toLowerCase();
+
+      if (game.includes(value)) {
         card.style.display = "block";
       } else {
         card.style.display = "none";
       }
+
     });
+
   });
 }
 
-// ===== THEME =====
-const themeBtn = document.getElementById("themeBtn");
+// ===== FAVORITE =====
+document.querySelectorAll(".favorite").forEach(item => {
 
-if (themeBtn) {
-  themeBtn.addEventListener("click", () => {
+  item.addEventListener("click", function () {
 
-    document.body.classList.toggle("light");
-
-    if (document.body.classList.contains("light")) {
-      document.body.style.background = "#f5f5f5";
-      document.body.style.color = "#111";
-      themeBtn.innerHTML = "☀️";
+    if (this.innerHTML == "🤍") {
+      this.innerHTML = "❤️";
     } else {
-      document.body.style.background = "#07141f";
-      document.body.style.color = "#fff";
-      themeBtn.innerHTML = "🌙";
+      this.innerHTML = "🤍";
     }
 
   });
-}
+
+});
 
 // ===== PLAY BUTTON =====
 document.querySelectorAll(".game-card button").forEach(btn => {
@@ -61,10 +59,53 @@ document.querySelectorAll(".game-card button").forEach(btn => {
 
 });
 
-console.log("Tkbd9999 Loaded Successfully");
-function startGame() {
-  alert("🎮 Welcome to Tkbd9999!\nChoose a game and start playing.");
-}
+// ===== DAILY REWARD =====
 function claimBonus() {
-  alert("🎉 Congratulations!\nYou received 100 Bonus Coins.");
+  alert("🎁 Daily Reward Claimed!");
 }
+
+// ===== HERO BUTTON =====
+function startGame() {
+  document
+    .getElementById("games")
+    .scrollIntoView({
+      behavior: "smooth"
+    });
+}
+
+// ===== THEME =====
+const themeBtn = document.getElementById("themeBtn");
+
+themeBtn.addEventListener("click", () => {
+
+  if (document.body.style.background == "white") {
+
+    document.body.style.background = "#07141f";
+    document.body.style.color = "#fff";
+    themeBtn.innerHTML = "🌙";
+
+  } else {
+
+    document.body.style.background = "white";
+    document.body.style.color = "#111";
+    themeBtn.innerHTML = "☀️";
+
+  }
+
+});
+
+// ===== NAVIGATION =====
+document.querySelectorAll(".nav").forEach(nav => {
+
+  nav.addEventListener("click", () => {
+
+    document.querySelectorAll(".nav")
+      .forEach(n => n.classList.remove("active"));
+
+    nav.classList.add("active");
+
+  });
+
+});
+
+console.log("Tkbd9999 Loaded Successfully");
