@@ -1,111 +1,138 @@
-// ===== LOADER =====
+// ===============================
+// TKBD9999 Premium Script
+// ===============================
+
+// Loader
 window.addEventListener("load", () => {
   const loader = document.getElementById("loader");
 
   setTimeout(() => {
-    loader.style.display = "none";
+    loader.style.opacity = "0";
+
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 500);
+
   }, 1200);
 });
 
-// ===== SEARCH =====
+// Hero Button
+function startGame() {
+  document.getElementById("games").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+// Search
 const searchInput = document.getElementById("searchInput");
 
 if (searchInput) {
+
   searchInput.addEventListener("keyup", function () {
 
-    const value = this.value.toLowerCase();
+    let value = this.value.toLowerCase();
 
     document.querySelectorAll(".game-card").forEach(card => {
 
-      const game = card.dataset.name.toLowerCase();
+      let game = card.dataset.name.toLowerCase();
 
       if (game.includes(value)) {
+
         card.style.display = "block";
+
       } else {
+
         card.style.display = "none";
+
       }
 
     });
 
   });
+
 }
 
-// ===== FAVORITE =====
-document.querySelectorAll(".favorite").forEach(item => {
-
-  item.addEventListener("click", function () {
-
-    if (this.innerHTML == "🤍") {
-      this.innerHTML = "❤️";
-    } else {
-      this.innerHTML = "🤍";
-    }
-
-  });
-
-});
-
-// ===== PLAY BUTTON =====
-document.querySelectorAll(".game-card button").forEach(btn => {
-
-  btn.addEventListener("click", function () {
-
-    const game =
-      this.parentElement.querySelector("h3").innerText;
-
-    alert("🎮 Opening " + game);
-
-  });
-
-});
-
-// ===== DAILY REWARD =====
-function claimBonus() {
-  alert("🎁 Daily Reward Claimed!");
-}
-
-// ===== HERO BUTTON =====
-function startGame() {
-  document
-    .getElementById("games")
-    .scrollIntoView({
-      behavior: "smooth"
-    });
-}
-
-// ===== THEME =====
+// Theme
 const themeBtn = document.getElementById("themeBtn");
 
-themeBtn.addEventListener("click", () => {
+themeBtn.onclick = () => {
 
-  if (document.body.style.background == "white") {
+  document.body.classList.toggle("light");
 
-    document.body.style.background = "#07141f";
-    document.body.style.color = "#fff";
-    themeBtn.innerHTML = "🌙";
+  if (document.body.classList.contains("light")) {
+
+    themeBtn.innerHTML =
+      '<i class="fa-solid fa-sun"></i>';
 
   } else {
 
-    document.body.style.background = "white";
-    document.body.style.color = "#111";
-    themeBtn.innerHTML = "☀️";
+    themeBtn.innerHTML =
+      '<i class="fa-solid fa-moon"></i>';
 
   }
 
+};
+
+// Favourite
+document.querySelectorAll(".game-bottom i").forEach(icon => {
+
+  icon.onclick = function () {
+
+    if (this.classList.contains("fa-regular")) {
+
+      this.classList.remove("fa-regular");
+      this.classList.add("fa-solid");
+
+    } else {
+
+      this.classList.remove("fa-solid");
+      this.classList.add("fa-regular");
+
+    }
+
+  };
+
 });
 
-// ===== NAVIGATION =====
+// Play Button
+document.querySelectorAll(".game-bottom button").forEach(btn => {
+
+  btn.onclick = function () {
+
+    const game =
+      this.parentElement.parentElement.querySelector("h3").innerText;
+
+    alert("🎮 Opening " + game);
+
+  };
+
+});
+
+// Navigation
 document.querySelectorAll(".nav").forEach(nav => {
 
-  nav.addEventListener("click", () => {
+  nav.onclick = function () {
 
     document.querySelectorAll(".nav")
       .forEach(n => n.classList.remove("active"));
 
-    nav.classList.add("active");
+    this.classList.add("active");
 
-  });
+  };
 
 });
 
-console.log("Tkbd9999 Loaded Successfully");
+// Bonus
+const bonusBtn = document.querySelector(".bonus button");
+
+if (bonusBtn) {
+
+  bonusBtn.onclick = () => {
+
+    alert("🎁 Daily Reward Claimed!");
+
+  };
+
+}
+
+console.log("TKBD9999 Premium Loaded Successfully");
